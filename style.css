@@ -1,0 +1,453 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --primary-color: #9151cd;
+  --primary-color-dark: #7945a9;
+  --secondary-color: #7931f5;
+  --text-dark: #dbd9d9;
+  --text-light: #6b7280;
+  --extra-light: #110d15;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #161616;
+  z-index: 99;
+}
+
+.nav__content {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+nav .logo a span {
+  color: var(--primary-color)
+}
+nav .logo a:hover {
+  color: var(--primary-color-dark);
+}
+
+nav .checkbox {
+  display: none;
+}
+
+nav input {
+  display: none;
+}
+nav .checkbox i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  transition: left 0.3s;
+}
+
+ul li a {
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: 0.3s;
+}
+
+ul li a:hover {
+  border-top-color: var(--secondary-color);
+  border-bottom-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.section {
+  background-color: var(--extra-light);
+}
+
+.section__container {
+  min-height: 100vh;
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+
+.content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content2 {
+  text-align: center     ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.subtitle {
+  text-align: left;
+  letter-spacing: 2px;
+  color: var(--text-light);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  text-align: left;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.title span {
+  font-weight: 600;
+}
+
+.description {
+  text-align: left;
+  line-height: 1.5rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.action__btns {
+  display: flex;
+  gap: 1rem;
+}
+
+.action__btns button {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 1rem 2rem;
+  outline: none;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.hire__me {
+  background-color: var(--primary-color);
+  color: #030303;
+}
+
+.hire__me:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.portfolio {
+  color: var(--primary-color);
+}
+
+.portfolio:hover {
+  background-color: var(--primary-color-dark);
+  color: #151515;
+}
+
+.image {
+  display: grid;
+  place-items: center;
+}
+
+.image img {
+  width: min(25rem, 90%);
+  border-radius: 100%;
+}
+
+@media (width < 750px) {
+  nav .checkbox {
+    display: block;
+  }
+
+  ul {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 85px);
+    left: -100%;
+    top: 85px;
+    background-color: var(--extra-light);
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  nav #check:checked ~ ul {
+    left: 0;
+  }
+
+  ul li a {
+    font-size: 1.25rem;
+  }
+
+  .section__container {
+    padding: 10rem 1rem 5rem 1rem;
+    text-align: center;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .image {
+    grid-area: 1/1/2/2;
+  }
+
+  .action__btns {
+    margin: auto;
+  }
+} 
+
+.section::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(1, 1, 3, 1,) 3%, rgba(255, 255, 255, 0) 25%);
+}
+/* About Section */
+.about,
+.menu,
+.contact {
+  padding: 8rem 7% 1.7rem;
+  background-color: #ffffff; 
+}
+
+.about h2,
+.menu h2,
+.contact h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.about h2 span,
+.menu h2 span,
+.contact h2 span {
+  color: var(--primary-color);
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 45rem;
+}
+
+.about .row .about-img img {
+  width: 100%;
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 1.8rem;
+  margin: 1rem;
+}
+
+.about .row .content p {
+  margin-bottom: 0.1rem;
+  font-size: 1.5rem;
+  font-weight: 200;
+  line-height: 1.8;
+}
+
+/* Style for the list */
+.List.Gambar {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.List.Gambar li a {
+  padding: 0;
+  border: 0;
+  text-decoration: none;
+  
+  
+}
+
+
+
+/* Style for each list item */
+.List.Gambar li {
+  text-align: center;
+  border: 2px solid var(--primary-color);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  width: 250px;
+  margin: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(199, 35, 214, 0.438);
+}
+
+/* Style for the images inside list items */
+.List.Gambar li img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px 15px 0 0; /* Rounded corners on the top */
+}
+
+/* Style for the paragraphs inside list items */
+.List.Gambar li p {
+  padding: 15px;
+  color: #333;
+}
+
+/* Add an interactive effect on hover */
+.List.Gambar li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(161, 54, 200, 0.295);
+}
+
+/* Style for heading */
+h1 {
+  color: #333;
+  margin: 30px 0;
+}
+/* Proyek section */
+.Projek,
+.menu,
+.contact {
+  padding: 8rem 7% 1.7rem;
+  background-color: var(--extra-light); 
+}
+
+.Projek h2,
+.menu h2,
+.contact h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+.Projek h2 span,
+.menu h2 span,
+.contact h2 span {
+  color: var(--primary-color);
+}
+.slideshow-container {
+ width: 9px;
+ height:9px;
+  /* Adjust width if needed */
+  /* Add margin/padding if desired */
+}
+
+.mySlides {
+  display: none;
+  animation: fade 1.7s ease-in-out infinite alternate;
+}
+
+@keyframes fade {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+.mySlides.show {
+  display: block;
+}
+
+.prev, .next {
+  /* Style navigation arrows here */
+  /* Consider position, size, hover effects */
+}
+
+
+
+
+/* Style for footer */
+
+/* Style untuk footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style untuk ikon */
+.icon {
+  font-size: 24px;
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease; /* Efek transisi warna saat dihover */
+}
+
+/* Efek hover pada ikon */
+.icon:hover {
+  color: #9200cbca; /* Warna kuning saat dihover */
+}
+
+/* Style untuk deskripsi di bawahnya */
+p {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+
+/* Efek hover pada deskripsi */
+p:hover {
+  text-decoration: underline; /* Garis bawah saat dihover */
+  cursor: pointer; /* Tanda kursor pointer saat dihover */
+}
+
+
+#fading-image {
+  animation: fadeIn 3s ease-in-out forwards;
+}
+
+
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
